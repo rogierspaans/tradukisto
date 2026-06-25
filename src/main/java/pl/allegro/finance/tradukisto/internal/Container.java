@@ -9,6 +9,9 @@ import pl.allegro.finance.tradukisto.internal.languages.croatian.CroatianValues;
 import pl.allegro.finance.tradukisto.internal.languages.czech.CzechIntegerToWordsConverter;
 import pl.allegro.finance.tradukisto.internal.languages.czech.CzechValues;
 import pl.allegro.finance.tradukisto.internal.languages.czech.CzechValuesForSmallNumbers;
+import pl.allegro.finance.tradukisto.internal.languages.danish.DanishIntegerToWordsConverter;
+import pl.allegro.finance.tradukisto.internal.languages.danish.DanishThousandToWordsConverter;
+import pl.allegro.finance.tradukisto.internal.languages.danish.DanishValues;
 import pl.allegro.finance.tradukisto.internal.languages.dutch.DutchIntegerToWordsConverter;
 import pl.allegro.finance.tradukisto.internal.languages.dutch.DutchLongToWordsConverter;
 import pl.allegro.finance.tradukisto.internal.languages.dutch.DutchThousandToWordsConverter;
@@ -379,6 +382,19 @@ public final class Container {
         );
 
         return new Container(integerToStringConverter, longToStringConverter, bigDecimalToBankingMoneyConverter);
+    }
+
+    public static Container danishContainer() {
+        DanishValues values = new DanishValues();
+        GenderAwareIntegerToStringConverter thousandToWordsConverter = new DanishThousandToWordsConverter(values.baseNumbers());
+        IntegerToStringConverter converter = new DanishIntegerToWordsConverter(
+          new NumberToWordsConverter(thousandToWordsConverter, values.pluralForms()),
+          values.exceptions(),
+          thousandToWordsConverter
+        );
+        LongToStringConverter longToWordsConverter = new DutchLongToWordsConverter(thousandToWordsConverter, values.pluralForms());
+        BigDecimalToStringConverter bigDecimalBankingMoneyValueConverter = new BigDecimalToBankingMoneyConverter(converter, values.currency());
+        return new Container(converter, longToWordsConverter, bigDecimalBankingMoneyValueConverter);
     }
 
     private final IntegerToStringConverter integerConverter;
