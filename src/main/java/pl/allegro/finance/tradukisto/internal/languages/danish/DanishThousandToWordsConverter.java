@@ -3,6 +3,7 @@ package pl.allegro.finance.tradukisto.internal.languages.danish;
 import static java.lang.String.format;
 
 import java.util.Map;
+
 import pl.allegro.finance.tradukisto.internal.GenderAwareIntegerToStringConverter;
 import pl.allegro.finance.tradukisto.internal.languages.GenderForms;
 import pl.allegro.finance.tradukisto.internal.languages.GenderType;
@@ -34,6 +35,7 @@ public class DanishThousandToWordsConverter implements GenderAwareIntegerToStrin
     private String twoDigitsNumberAsString(Integer value, GenderType genderType) {
         Integer units = value % 10;
         Integer tens = value - units;
+
         return format("%sog%s", asWords(units, genderType), asWords(tens, genderType));
     }
 
@@ -49,28 +51,29 @@ public class DanishThousandToWordsConverter implements GenderAwareIntegerToStrin
     }
 
     private String thousandsAsString(Integer value, GenderType genderType) {
-        Integer thousands = value / 1000;
+        int thousands = value / 1000;
         Integer other = value % 1000;
 
-        if (isOneThousand(thousands)) {
-            return getOneThousandAsWords(other, genderType);
+        if (thousands == 1) {
+            return oneThousandAsWords(other, genderType);
         }
 
-        return getThousandsAsWords(thousands, other, genderType);
+        return thousandsAsWords(thousands, other, genderType);
     }
 
-    private String getThousandsAsWords(Integer thousands, Integer other, GenderType genderType) {
+    private String thousandsAsWords(Integer thousands, Integer other, GenderType genderType) {
         if (other == 0) {
             return format("%s tusind", asWords(thousands, genderType));
         }
+
         return format("%s tusind %s", asWords(thousands, genderType), asWords(other, genderType));
     }
 
-    private String getOneThousandAsWords(Integer other, GenderType genderType) {
-        return format("et tusind", asWords(other, genderType));
-    }
+    private String oneThousandAsWords(Integer other, GenderType genderType) {
+        if (other == 0) {
+            return "et tusind";
+        }
 
-    private boolean isOneThousand(Integer thousands) {
-        return thousands == 1;
+        return format("et tusind %s", asWords(other, genderType));
     }
 }

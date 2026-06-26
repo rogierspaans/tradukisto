@@ -5,6 +5,7 @@ import static java.util.Collections.reverse;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import pl.allegro.finance.tradukisto.internal.GenderAwareIntegerToStringConverter;
 import pl.allegro.finance.tradukisto.internal.LongToStringConverter;
 import pl.allegro.finance.tradukisto.internal.languages.GenderType;
@@ -38,7 +39,7 @@ public class DanishLongToWordsConverter implements LongToStringConverter {
 
         if (bigNumber > 0) {
             List<Integer> valueChunks = numberChunking.chunk(bigNumber);
-            List<PluralForms> formsToUse = getRequiredFormsInReversedOrder(valueChunks.size());
+            List<PluralForms> formsToUse = requiredFormsInReversedOrder(valueChunks.size());
             result.add(joinValueChunksWithForms(valueChunks.iterator(), formsToUse.iterator()));
         }
 
@@ -49,13 +50,13 @@ public class DanishLongToWordsConverter implements LongToStringConverter {
         return joinParts(result);
     }
 
-    protected List<PluralForms> getRequiredFormsInReversedOrder(int chunks) {
+    private List<PluralForms> requiredFormsInReversedOrder(int chunks) {
         List<PluralForms> formsToUse = new ArrayList<>(pluralForms.subList(0, chunks));
         reverse(formsToUse);
         return formsToUse;
     }
 
-    protected String joinValueChunksWithForms(Iterator<Integer> chunks, Iterator<PluralForms> formsToUse) {
+    private String joinValueChunksWithForms(Iterator<Integer> chunks, Iterator<PluralForms> formsToUse) {
         List<String> result = new ArrayList<>();
 
         while (chunks.hasNext() && formsToUse.hasNext()) {
@@ -63,8 +64,7 @@ public class DanishLongToWordsConverter implements LongToStringConverter {
             PluralForms currentForms = formsToUse.next();
 
             if (currentChunkValue > 0) {
-                String words = hundredsToWordsConverter.asWords(currentChunkValue, currentForms.genderType());
-                result.add(words);
+                result.add(hundredsToWordsConverter.asWords(currentChunkValue, currentForms.genderType()));
                 result.add(currentForms.formFor(currentChunkValue));
             }
         }
@@ -72,7 +72,7 @@ public class DanishLongToWordsConverter implements LongToStringConverter {
         return joinParts(result);
     }
 
-    protected String joinParts(List<String> result) {
+    private String joinParts(List<String> result) {
         return result.isEmpty()
             ? hundredsToWordsConverter.asWords(0, pluralForms.get(0).genderType())
             : String.join(" ", result).trim();

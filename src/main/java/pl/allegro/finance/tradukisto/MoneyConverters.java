@@ -11,6 +11,7 @@ import static pl.allegro.finance.tradukisto.internal.Container.americanEnglishCo
 import static pl.allegro.finance.tradukisto.internal.Container.brazilianPortugueseContainer;
 import static pl.allegro.finance.tradukisto.internal.Container.croatianContainer;
 import static pl.allegro.finance.tradukisto.internal.Container.czechContainer;
+import static pl.allegro.finance.tradukisto.internal.Container.danishContainer;
 import static pl.allegro.finance.tradukisto.internal.Container.englishContainer;
 import static pl.allegro.finance.tradukisto.internal.Container.finnishContainer;
 import static pl.allegro.finance.tradukisto.internal.Container.frenchContainer;
@@ -38,6 +39,7 @@ public enum MoneyConverters {
 
     AZERBAIJANI_BANKING_MONEY_VALUE(azerbaijaniContainer().getBankingMoneyConverter()),
     BRAZILIAN_PORTUGUESE_BANKING_MONEY_VALUE(brazilianPortugueseContainer().getBankingMoneyConverter()),
+    DANISH_BANKING_MONEY_VALUE(danishContainer().getBankingMoneyConverter()),
     ENGLISH_BANKING_MONEY_VALUE(englishContainer().getBankingMoneyConverter()),
     AMERICAN_ENGLISH_BANKING_MONEY_VALUE(americanEnglishContainer().getBankingMoneyConverter()),
     GERMAN_BANKING_MONEY_VALUE(germanContainer().getBankingMoneyConverter()),

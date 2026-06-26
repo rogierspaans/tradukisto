@@ -3,11 +3,12 @@ package pl.allegro.finance.tradukisto
 import spock.lang.Specification
 import spock.lang.Unroll
 
-import static pl.allegro.finance.tradukisto.MoneyConverters.AZERBAIJANI_BANKING_MONEY_VALUE;
+import static pl.allegro.finance.tradukisto.MoneyConverters.AZERBAIJANI_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.AMERICAN_ENGLISH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.BRAZILIAN_PORTUGUESE_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.BULGARIAN_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.CZECH_BANKING_MONEY_VALUE
+import static pl.allegro.finance.tradukisto.MoneyConverters.DANISH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.ENGLISH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.FINNISH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.FRENCH_BANKING_MONEY_VALUE
@@ -46,6 +47,7 @@ class MoneyConvertersTest extends Specification {
         "Brazilian Portuguese" | BRAZILIAN_PORTUGUESE_BANKING_MONEY_VALUE || "mil duzentos e trinta e quatro R\$ 56/100"
         "Bulgarian"            | BULGARIAN_BANKING_MONEY_VALUE            || "хиляда двеста тридесет четири € 56/100"
         "Czech"                | CZECH_BANKING_MONEY_VALUE                || "jeden tisíc dvě stě třicet čtyři Kč 56/100"
+        "Danish"               | DANISH_BANKING_MONEY_VALUE               || "et tusind to hundrede fireogtredive kr 56/100"
         "Dutch"                | DUTCH_BANKING_MONEY_VALUE                || "duizendtweehonderdvierendertig € 56/100"
         "English"              | ENGLISH_BANKING_MONEY_VALUE              || "one thousand two hundred thirty-four £ 56/100"
         "Finnish"              | FINNISH_BANKING_MONEY_VALUE              || "tuhatkaksisataakolmekymmentäneljä € 56/100"

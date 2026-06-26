@@ -7,6 +7,7 @@ import static pl.allegro.finance.tradukisto.ValueConverters.AZERBAIJANI_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.BRAZILIAN_PORTUGUESE_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.BULGARIAN_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.CZECH_INTEGER
+import static pl.allegro.finance.tradukisto.ValueConverters.DANISH_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.ENGLISH_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.FINNISH_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.FRENCH_INTEGER
@@ -45,6 +46,7 @@ class ValueConvertersTest extends Specification {
         "Brazilian Portuguese" | BRAZILIAN_PORTUGUESE_INTEGER || "mil duzentos e trinta e quatro"
         "Bulgarian"            | BULGARIAN_INTEGER            || "хиляда двеста тридесет четири"
         "Czech"                | CZECH_INTEGER                || "jeden tisíc dvě stě třicet čtyři"
+        "Danish"               | DANISH_INTEGER               || "et tusind to hundrede fireogtredive"
         "Dutch"                | DUTCH_INTEGER                || "duizendtweehonderdvierendertig"
         "English"              | ENGLISH_INTEGER              || "one thousand two hundred thirty-four"
         "Finnish"              | FINNISH_INTEGER              || "tuhatkaksisataakolmekymmentäneljä"
@@ -92,6 +94,7 @@ class ValueConvertersTest extends Specification {
         new Locale("pt")                                                 || BRAZILIAN_PORTUGUESE_INTEGER
         new Locale("bg")                                                 || BULGARIAN_INTEGER
         new Locale("cs")                                                 || CZECH_INTEGER
+        new Locale("da")                                                 || DANISH_INTEGER
         Locale.ENGLISH                                                   || ENGLISH_INTEGER
         Locale.US                                                        || ENGLISH_INTEGER
         new Locale("fi")                                                 || FINNISH_INTEGER
@@ -150,6 +153,7 @@ class ValueConvertersTest extends Specification {
         "pt"         || BRAZILIAN_PORTUGUESE_INTEGER
         "bg"         || BULGARIAN_INTEGER
         "cs"         || CZECH_INTEGER
+        "da"         || DANISH_INTEGER
         "nl"         || DUTCH_INTEGER
         "en"         || ENGLISH_INTEGER
         "fi"         || FINNISH_INTEGER

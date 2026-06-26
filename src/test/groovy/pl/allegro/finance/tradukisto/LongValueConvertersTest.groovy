@@ -4,6 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 import static pl.allegro.finance.tradukisto.LongValueConverters.AZERBAIJANI_LONG
+import static pl.allegro.finance.tradukisto.LongValueConverters.DANISH_LONG
 import static pl.allegro.finance.tradukisto.LongValueConverters.ENGLISH_LONG
 import static pl.allegro.finance.tradukisto.LongValueConverters.FINNISH_LONG
 import static pl.allegro.finance.tradukisto.LongValueConverters.HINDI_LONG
@@ -23,6 +24,7 @@ class LongValueConvertersTest extends Specification {
         where:
         language      | converter           || number
         "Azerbaijani" | AZERBAIJANI_LONG    || "bir kvintilyon"
+        "Danish"      | DANISH_LONG         || "en trillion"
         "English"     | ENGLISH_LONG        || "one quintillion"
         "Finnish"     | FINNISH_LONG        || "triljoona"
         "Russian"     | RUSSIAN_LONG        || "один квинтиллион"

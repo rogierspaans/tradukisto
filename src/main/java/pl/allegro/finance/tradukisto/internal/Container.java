@@ -11,6 +11,7 @@ import pl.allegro.finance.tradukisto.internal.languages.czech.CzechIntegerToWord
 import pl.allegro.finance.tradukisto.internal.languages.czech.CzechValues;
 import pl.allegro.finance.tradukisto.internal.languages.czech.CzechValuesForSmallNumbers;
 import pl.allegro.finance.tradukisto.internal.languages.danish.DanishIntegerToWordsConverter;
+import pl.allegro.finance.tradukisto.internal.languages.danish.DanishLongToWordsConverter;
 import pl.allegro.finance.tradukisto.internal.languages.danish.DanishThousandToWordsConverter;
 import pl.allegro.finance.tradukisto.internal.languages.danish.DanishValues;
 import pl.allegro.finance.tradukisto.internal.languages.dutch.DutchIntegerToWordsConverter;
@@ -260,6 +261,29 @@ public final class Container {
         return new Container(converter, dutchLongToWordsConverter, bigDecimalBankingMoneyValueConverter);
     }
 
+    public static Container danishContainer() {
+        DanishValues values = new DanishValues();
+
+        DanishThousandToWordsConverter thousandToWordsConverter =
+            new DanishThousandToWordsConverter(values.baseNumbers());
+
+        IntegerToStringConverter converter = new DanishIntegerToWordsConverter(
+            new NumberToWordsConverter(thousandToWordsConverter, values.pluralForms()),
+            values.exceptions(),
+            thousandToWordsConverter
+        );
+
+        LongToStringConverter longToWordsConverter = new DanishLongToWordsConverter(
+            thousandToWordsConverter,
+            values.pluralForms()
+        );
+
+        BigDecimalToStringConverter bigDecimalBankingMoneyValueConverter =
+            new BigDecimalToBankingMoneyConverter(converter, values.currency());
+
+        return new Container(converter, longToWordsConverter, bigDecimalBankingMoneyValueConverter);
+    }
+
     public static Container italianContainer() {
         ItalianValues values = new ItalianValues();
 
@@ -445,19 +469,6 @@ public final class Container {
 
     public static Container azerbaijaniContainer() {
         return new Container(new AzerbaijaniValues());
-    }
-
-    public static Container danishContainer() {
-        DanishValues values = new DanishValues();
-        GenderAwareIntegerToStringConverter thousandToWordsConverter = new DanishThousandToWordsConverter(values.baseNumbers());
-        IntegerToStringConverter converter = new DanishIntegerToWordsConverter(
-          new NumberToWordsConverter(thousandToWordsConverter, values.pluralForms()),
-          values.exceptions(),
-          thousandToWordsConverter
-        );
-        LongToStringConverter longToWordsConverter = new DutchLongToWordsConverter(thousandToWordsConverter, values.pluralForms());
-        BigDecimalToStringConverter bigDecimalBankingMoneyValueConverter = new BigDecimalToBankingMoneyConverter(converter, values.currency());
-        return new Container(converter, longToWordsConverter, bigDecimalBankingMoneyValueConverter);
     }
 
     private final IntegerToStringConverter integerConverter;

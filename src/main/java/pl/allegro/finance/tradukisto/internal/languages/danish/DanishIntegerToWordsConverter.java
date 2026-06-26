@@ -1,6 +1,7 @@
 package pl.allegro.finance.tradukisto.internal.languages.danish;
 
 import java.util.Map;
+
 import pl.allegro.finance.tradukisto.internal.GenderAwareIntegerToStringConverter;
 import pl.allegro.finance.tradukisto.internal.IntegerToStringConverter;
 import pl.allegro.finance.tradukisto.internal.NumberProcessor;
@@ -32,5 +33,4 @@ public class DanishIntegerToWordsConverter implements IntegerToStringConverter {
 
         return new NumberProcessor(bigNumbersConverter, smallNumbersConverter).process(bigNumber, smallNumber);
     }
-
 }
