@@ -30,6 +30,7 @@ public enum ValueConverters {
     SERBIAN_CYRILLIC_INTEGER(Container.serbianCyrillicContainer().getIntegerConverter(), getLanguageCodeFor("sr", "Cyrl")),
     BULGARIAN_INTEGER(Container.bulgarianContainer().getIntegerConverter(), "bg"),
     FRENCH_INTEGER(Container.frenchContainer().getIntegerConverter(), "fr"),
+    FINNISH_INTEGER(Container.finnishContainer().getIntegerConverter(), "fi"),
     TURKISH_INTEGER(Container.turkishContainer().getIntegerConverter(), "tr"),
     DUTCH_INTEGER(Container.dutchContainer().getIntegerConverter(), "nl"),
     SLOVENE_INTEGER(Container.sloveneContainer().getIntegerConverter(), "sl"),

@@ -28,6 +28,7 @@ With Tradukisto, you can now transform numbers into their word equivalents easy 
 * 🇨🇿 Czech
 * 🇳🇱 Dutch
 * 🇬🇧 English
+* 🇫🇮 Finnish
 * 🇫🇷 French
 * 🇩🇪 German
 * 🇬🇷 Greek

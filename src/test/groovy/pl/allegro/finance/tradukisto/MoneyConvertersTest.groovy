@@ -9,6 +9,7 @@ import static pl.allegro.finance.tradukisto.MoneyConverters.BRAZILIAN_PORTUGUESE
 import static pl.allegro.finance.tradukisto.MoneyConverters.BULGARIAN_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.CZECH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.ENGLISH_BANKING_MONEY_VALUE
+import static pl.allegro.finance.tradukisto.MoneyConverters.FINNISH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.FRENCH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.GERMAN_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.HINDI_BANKING_MONEY_VALUE
@@ -47,6 +48,7 @@ class MoneyConvertersTest extends Specification {
         "Czech"                | CZECH_BANKING_MONEY_VALUE                || "jeden tisíc dvě stě třicet čtyři Kč 56/100"
         "Dutch"                | DUTCH_BANKING_MONEY_VALUE                || "duizendtweehonderdvierendertig € 56/100"
         "English"              | ENGLISH_BANKING_MONEY_VALUE              || "one thousand two hundred thirty-four £ 56/100"
+        "Finnish"              | FINNISH_BANKING_MONEY_VALUE              || "tuhatkaksisataakolmekymmentäneljä € 56/100"
         "French"               | FRENCH_BANKING_MONEY_VALUE               || "mille deux cent trente-quatre € 56/100"
         "German"               | GERMAN_BANKING_MONEY_VALUE               || "eintausendzweihundertvierunddreißig € 56/100"
         "Italian"              | ITALIAN_BANKING_MONEY_VALUE              || "milleduecentotrentaquattro € 56/100"

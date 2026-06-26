@@ -19,6 +19,8 @@ import pl.allegro.finance.tradukisto.internal.languages.dutch.DutchThousandToWor
 import pl.allegro.finance.tradukisto.internal.languages.dutch.DutchValues;
 import pl.allegro.finance.tradukisto.internal.languages.english.AmericanEnglishValues;
 import pl.allegro.finance.tradukisto.internal.languages.english.EnglishValues;
+import pl.allegro.finance.tradukisto.internal.languages.finnish.FinnishNumberToWordsConverter;
+import pl.allegro.finance.tradukisto.internal.languages.finnish.FinnishValues;
 import pl.allegro.finance.tradukisto.internal.languages.french.FrenchNumberToWordsConverter;
 import pl.allegro.finance.tradukisto.internal.languages.french.FrenchValues;
 import pl.allegro.finance.tradukisto.internal.languages.german.GermanIntegerToWordsConverter;
@@ -201,6 +203,20 @@ public final class Container {
             new BigDecimalToBankingMoneyConverter(converter, values.currency());
 
         return new Container(converter, null, bigDecimalBankingMoneyValueConverter);
+    }
+
+    public static Container finnishContainer() {
+        FinnishValues values = new FinnishValues();
+
+        FinnishNumberToWordsConverter converter = new FinnishNumberToWordsConverter(
+            values.baseNumbers(),
+            values.pluralForms()
+        );
+
+        BigDecimalToStringConverter bigDecimalBankingMoneyValueConverter =
+            new BigDecimalToBankingMoneyConverter(converter, values.currency());
+
+        return new Container(converter, converter, bigDecimalBankingMoneyValueConverter);
     }
 
     public static Container germanContainer() {

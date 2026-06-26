@@ -8,6 +8,7 @@ import static pl.allegro.finance.tradukisto.ValueConverters.BRAZILIAN_PORTUGUESE
 import static pl.allegro.finance.tradukisto.ValueConverters.BULGARIAN_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.CZECH_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.ENGLISH_INTEGER
+import static pl.allegro.finance.tradukisto.ValueConverters.FINNISH_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.FRENCH_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.GERMAN_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.HINDI_INTEGER
@@ -46,6 +47,7 @@ class ValueConvertersTest extends Specification {
         "Czech"                | CZECH_INTEGER                || "jeden tisíc dvě stě třicet čtyři"
         "Dutch"                | DUTCH_INTEGER                || "duizendtweehonderdvierendertig"
         "English"              | ENGLISH_INTEGER              || "one thousand two hundred thirty-four"
+        "Finnish"              | FINNISH_INTEGER              || "tuhatkaksisataakolmekymmentäneljä"
         "French"               | FRENCH_INTEGER               || "mille deux cent trente-quatre"
         "German"               | GERMAN_INTEGER               || "eintausendzweihundertvierunddreißig"
         "Italian"              | ITALIAN_INTEGER              || "milleduecentotrentaquattro"
@@ -92,6 +94,7 @@ class ValueConvertersTest extends Specification {
         new Locale("cs")                                                 || CZECH_INTEGER
         Locale.ENGLISH                                                   || ENGLISH_INTEGER
         Locale.US                                                        || ENGLISH_INTEGER
+        new Locale("fi")                                                 || FINNISH_INTEGER
         Locale.FRENCH                                                    || FRENCH_INTEGER
         new Locale("it")                                                 || ITALIAN_INTEGER
         Locale.ITALIAN                                                   || ITALIAN_INTEGER
@@ -149,6 +152,7 @@ class ValueConvertersTest extends Specification {
         "cs"         || CZECH_INTEGER
         "nl"         || DUTCH_INTEGER
         "en"         || ENGLISH_INTEGER
+        "fi"         || FINNISH_INTEGER
         "fr"         || FRENCH_INTEGER
         "it"         || ITALIAN_INTEGER
         "de"         || GERMAN_INTEGER
