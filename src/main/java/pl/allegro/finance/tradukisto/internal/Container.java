@@ -44,6 +44,8 @@ import pl.allegro.finance.tradukisto.internal.languages.japanese.JapaneseValues;
 import pl.allegro.finance.tradukisto.internal.languages.kazakh.KazakhValues;
 import pl.allegro.finance.tradukisto.internal.languages.kyrgyz.KyrgyzValues;
 import pl.allegro.finance.tradukisto.internal.languages.latvian.LatvianValues;
+import pl.allegro.finance.tradukisto.internal.languages.norwegian.NorwegianHundredToWordsConverter;
+import pl.allegro.finance.tradukisto.internal.languages.norwegian.NorwegianValues;
 import pl.allegro.finance.tradukisto.internal.languages.polish.PolishValues;
 import pl.allegro.finance.tradukisto.internal.languages.portuguese.BrazilianPortugueseValues;
 import pl.allegro.finance.tradukisto.internal.languages.portuguese.PortugueseIntegerToWordsConverter;
@@ -379,6 +381,25 @@ public final class Container {
             swedishBaseValues.currency());
 
         return new Container(swedishNumberToWordsConverter, swedishNumberToWordsConverter, swedishBigDecimalConverter);
+    }
+
+    public static Container norwegianContainer() {
+        NorwegianValues values = new NorwegianValues();
+
+        NorwegianHundredToWordsConverter hundredsToWordsConverter =
+            new NorwegianHundredToWordsConverter(values.baseNumbers());
+
+        NumberToWordsConverter numberToWordsConverter = new NumberToWordsConverter(
+            hundredsToWordsConverter,
+            values.pluralForms()
+        );
+
+        BigDecimalToStringConverter bigDecimalConverter = new BigDecimalToBankingMoneyConverter(
+            numberToWordsConverter,
+            values.currency()
+        );
+
+        return new Container(numberToWordsConverter, numberToWordsConverter, bigDecimalConverter);
     }
 
     public static Container japaneseKanjiContainer() {

@@ -38,6 +38,7 @@ With Tradukisto, you can now transform numbers into their word equivalents easy 
 * 🇰🇿 Kazakh
 * 🇰🇬 Kyrgyz
 * 🇱🇻 Latvian
+* 🇳🇴 Norwegian
 * 🇵🇱 Polish
 * 🇷🇺 Russian
 * 🇷🇸 Serbian (Cyrillic)

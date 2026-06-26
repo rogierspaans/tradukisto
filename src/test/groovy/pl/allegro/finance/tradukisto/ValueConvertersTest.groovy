@@ -16,6 +16,7 @@ import static pl.allegro.finance.tradukisto.ValueConverters.JAPANESE_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.KAZAKH_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.KYRGYZ_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.LATVIAN_INTEGER
+import static pl.allegro.finance.tradukisto.ValueConverters.NORWEGIAN_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.POLISH_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.RUSSIAN_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.SERBIAN_CYRILLIC_INTEGER
@@ -52,6 +53,7 @@ class ValueConvertersTest extends Specification {
         "Kazakh"               | KAZAKH_INTEGER               || "бір мың екі жүз отыз төрт"
         "Kyrgyz"               | KYRGYZ_INTEGER               || "бир миң эки жүз отуз төрт"
         "Latvian"              | LATVIAN_INTEGER              || "viens tūkstotis divi simti trīsdesmit četri"
+        "Norwegian"            | NORWEGIAN_INTEGER            || "ett tusen to hundre og trettifire"
         "Polish"               | POLISH_INTEGER               || "jeden tysiąc dwieście trzydzieści cztery"
         "Serbian Cyrillic"     | SERBIAN_CYRILLIC_INTEGER     || "једна хиљада двеста тридесет четири"
         "Serbian Latin"        | SERBIAN_INTEGER              || "jedna hiljada dvesta trideset četiri"
@@ -98,6 +100,7 @@ class ValueConvertersTest extends Specification {
         new Locale("kk")                                                 || KAZAKH_INTEGER
         new Locale("ky")                                                 || KYRGYZ_INTEGER
         new Locale("lv")                                                 || LATVIAN_INTEGER
+        new Locale("no")                                                 || NORWEGIAN_INTEGER
         new Locale("pl")                                                 || POLISH_INTEGER
         new Locale("ru")                                                 || RUSSIAN_INTEGER
         new Locale.Builder().setLanguage("sr").setScript("Cyrl").build() || SERBIAN_CYRILLIC_INTEGER
@@ -152,6 +155,7 @@ class ValueConvertersTest extends Specification {
         "kk"         || KAZAKH_INTEGER
         "ky"         || KYRGYZ_INTEGER
         "lv"         || LATVIAN_INTEGER
+        "no"         || NORWEGIAN_INTEGER
         "pl"         || POLISH_INTEGER
         "ru"         || RUSSIAN_INTEGER
         "sr__#Cyrl"  || SERBIAN_CYRILLIC_INTEGER

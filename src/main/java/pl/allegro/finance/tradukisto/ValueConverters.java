@@ -37,6 +37,7 @@ public enum ValueConverters {
     HINDI_INTEGER(Container.hindiContainer().getIntegerConverter(), "hi"),
     HUNGARIAN_INTEGER(Container.hungarianContainer().getIntegerConverter(), "hu"),
     SWEDISH_INTEGER(Container.swedishContainer().getIntegerConverter(), "sv"),
+    NORWEGIAN_INTEGER(Container.norwegianContainer().getIntegerConverter(), "no"),
     JAPANESE_INTEGER(Container.japaneseKanjiContainer().getIntegerConverter(), "ja");
 
     private final IntegerToStringConverter converter;

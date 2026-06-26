@@ -17,6 +17,7 @@ import static pl.allegro.finance.tradukisto.MoneyConverters.JAPANESE_BANKING_MON
 import static pl.allegro.finance.tradukisto.MoneyConverters.KAZAKH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.KYRGYZ_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.LATVIAN_BANKING_MONEY_VALUE
+import static pl.allegro.finance.tradukisto.MoneyConverters.NORWEGIAN_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.POLISH_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.RUSSIAN_BANKING_MONEY_VALUE
 import static pl.allegro.finance.tradukisto.MoneyConverters.SERBIAN_BANKING_MONEY_VALUE
@@ -40,6 +41,7 @@ class MoneyConvertersTest extends Specification {
         language               | converter                                || money
         "Azerbaijani"          | AZERBAIJANI_BANKING_MONEY_VALUE          || "bir min iki yüz otuz dörd AZN 56/100"
         "American English"     | AMERICAN_ENGLISH_BANKING_MONEY_VALUE     || "one thousand two hundred thirty-four \$ 56/100"
+        "Norwegian"            | NORWEGIAN_BANKING_MONEY_VALUE            || "ett tusen to hundre og trettifire kr 56/100"
         "Brazilian Portuguese" | BRAZILIAN_PORTUGUESE_BANKING_MONEY_VALUE || "mil duzentos e trinta e quatro R\$ 56/100"
         "Bulgarian"            | BULGARIAN_BANKING_MONEY_VALUE            || "хиляда двеста тридесет четири € 56/100"
         "Czech"                | CZECH_BANKING_MONEY_VALUE                || "jeden tisíc dvě stě třicet čtyři Kč 56/100"

@@ -6,6 +6,7 @@ import spock.lang.Unroll
 import static pl.allegro.finance.tradukisto.LongValueConverters.AZERBAIJANI_LONG
 import static pl.allegro.finance.tradukisto.LongValueConverters.ENGLISH_LONG
 import static pl.allegro.finance.tradukisto.LongValueConverters.HINDI_LONG
+import static pl.allegro.finance.tradukisto.LongValueConverters.NORWEGIAN_LONG
 import static pl.allegro.finance.tradukisto.LongValueConverters.POLISH_LONG
 import static pl.allegro.finance.tradukisto.LongValueConverters.RUSSIAN_LONG
 import static pl.allegro.finance.tradukisto.LongValueConverters.SWEDISH_LONG
@@ -25,6 +26,7 @@ class LongValueConvertersTest extends Specification {
         "Russian"     | RUSSIAN_LONG        || "один квинтиллион"
         "Polish"      | POLISH_LONG         || "jeden trylion"
         "Hindi"       | HINDI_LONG          || "दस शंख"
+        "Norwegian"   | NORWEGIAN_LONG      || "en trillion"
         "Swedish"     | SWEDISH_LONG        || "en triljon"
         "Japanese"    | JAPANESE_KANJI_LONG || "百京"
     }
