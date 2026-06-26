@@ -41,6 +41,10 @@ public class DanishThousandToWordsConverter implements GenderAwareIntegerToStrin
         Integer tensWithUnits = value % 100;
         Integer hundreds = value - tensWithUnits;
 
+        if (hundreds == 100 && tensWithUnits < 20) {
+            return format("et %s %s", asWords(hundreds, genderType), asWords(tensWithUnits, genderType));
+        }
+
         return format("%s %s", asWords(hundreds, genderType), asWords(tensWithUnits, genderType));
     }
 
